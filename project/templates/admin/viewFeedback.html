@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <link rel="shortcut icon" href="../../static/assets/img/favicon.ico" type="image/x-icon" />
+
+    <title>Smart Travelling</title>    <!-- Favicon-->
+    <!-- Plugins Core Css -->
+    <link href="../../static/assets/css/app.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="../../static/assets/css/style.css" rel="stylesheet">
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../static/assets/css/all-themes.css" rel="stylesheet"/>
+</head>
+
+<body class="light loader-active">
+<!-- Page Loader -->
+ <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="../../static/assets/img/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
+    </div>
+<!-- #END# Page Loader -->
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+<!-- Top Bar -->
+<!-- Top Bar -->
+
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+               data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="" onClick="return false;" class="bars"></a>
+            <a class="navbar-brand" href="" onClick="return false;">
+                <span class="logo-name">Hello Admin!</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="" onClick="return false;" class="sidemenu-collapse">
+                        <i class="nav-hdr-btn ti-align-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Full Screen Button -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="breadcrumb breadcrumb-style ">
+                                <li class="breadcrumb-item">
+                                    <h2 class="breadcrumb-item">Manage Feedback</h2>
+                                </li>
+                            </p>
+                        </div>
+                <!-- #END# Full Screen Button -->
+                <!-- #START# Notifications-->
+
+                <!-- #END# Notifications-->
+
+                <!-- #END# Tasks -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- #Top Bar -->
+<div>
+    <!-- Left Sidebar -->
+
+
+    {% include 'admin/menu.html' %}
+
+
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+    <!-- #END# Right Sidebar -->
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Feedback Subject</th>
+                                    <th>Feedback Description</th>
+                                    <th>Feedback Rating</th>
+                                    <th>Feedback Date</th>
+                                    <th>Feedback Time</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for row in feedbackVOList %}
+                                    <tr>
+                                        <td>{{ row[1]['userName'] }}</td>
+                                        <td>{{ row[0]['feedbackSubject'] }}</td>
+                                        <td>{{ row[0]['feedbackDescription'] }}</td>
+                                        <td>
+                                            {% for row in range(row[0]['feedbackRating']|int) %}
+                                                <img src="../../static/assets/img/star.png" style="width: 22px; height: 22px">
+                                            {% endfor %}
+                                        </td>
+                                        <td>{{ row[0]['feedbackDate'] }}</td>
+                                        <td>{{ row[0]['feedbackTime'] }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Plugins Js -->
+<script src="../../static/assets/js/app.min.js"></script>
+<script src="../../static/assets/js/table.min.js"></script>
+<!-- Custom Js -->
+<script src="../../static/assets/js/admin.js"></script>
+<script src="../../static/assets/js/jquery-datatable.js"></script>
+<!-- Demo Js -->
+</body>
+
+</html>

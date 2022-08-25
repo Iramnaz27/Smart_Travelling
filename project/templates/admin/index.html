@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <link rel="shortcut icon" href="../../static/assets/img/favicon.ico" type="image/x-icon" />
+
+    <title>Smart Travelling</title>    <!-- Favicon-->
+    <!-- Plugins Core Css -->
+    <link href="../../static/assets/css/app.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="../../static/assets/css/style.css" rel="stylesheet">
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="../../static/assets/css/all-themes.css" rel="stylesheet"/>
+</head>
+
+<body class="light loader-active">
+<!-- Page Loader -->
+ <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="../../static/assets/img/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
+    </div>
+<!-- #END# Page Loader -->
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+<!-- #END# Overlay For Sidebars -->
+<!-- Top Bar -->
+<!-- Top Bar -->
+
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+               data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="" onClick="return false;" class="bars"></a>
+            <a class="navbar-brand" href="" onClick="return false;">
+                <span class="logo-name">Hello Admin!</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="" onClick="return false;" class="sidemenu-collapse">
+                        <i class="nav-hdr-btn ti-align-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Full Screen Button -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="breadcrumb breadcrumb-style ">
+                                <li class="breadcrumb-item">
+                                    <h2 class="breadcrumb-item">Admin Dashboard</h2>
+                                </li>
+                            </p>
+                        </div>
+                <!-- #END# Full Screen Button -->
+                <!-- #START# Notifications-->
+                
+                <!-- #END# Notifications-->
+                
+                <!-- #END# Tasks -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- #Top Bar -->
+<div>
+    <!-- Left Sidebar -->
+
+
+    {% include 'admin/menu.html' %}
+
+
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+    <!-- #END# Right Sidebar -->
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Total Users</th>
+                                        <th>Total Drivers</th>
+                                        <th>Total Vehicles</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ userCount }}</td>
+                                        <td>{{ driverCount }}</td>
+                                        <td>{{ vehicleCount }}</td>
+                                    </tr>
+                                    </tbody>
+                            </table>
+                            {% if error %}
+                                <script>
+                                    alert("{{ error }}");
+                                </script>
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Upcoming Bookings</th>
+                                        <th>Cancelled Bookings</th>
+                                        <th>Completed Bookings</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ upcomingBookings }}</td>
+                                        <td>{{ cancelledBookings }}</td>
+                                        <td>{{ completedBookings }}</td>
+                                    </tr>
+                                    </tbody>
+                            </table>
+                            {% if error %}
+                                <script>
+                                    alert("{{ error }}");
+                                </script>
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Old Customers Discount</th>
+                                        <th>New Customers Discount</th>
+                                        <th>All Customers Discount</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ discountOldcustomer }}</td>
+                                        <td>{{ discountNewcustomer }}</td>
+                                        <td>{{ discountAllcustomer }}</td>
+                                    </tr>
+                                    </tbody>
+                            </table>
+                            {% if error %}
+                                <script>
+                                    alert("{{ error }}");
+                                </script>
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <center><h3>Total Visitors : {{visitors}}</h3></center>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Plugins Js -->
+<script src="../../static/assets/js/app.min.js"></script>
+<script src="../../static/assets/js/table.min.js"></script>
+<!-- Custom Js -->
+<script src="../../static/assets/js/admin.js"></script>
+<script src="../../static/assets/js/jquery-datatable.js"></script>
+<!-- Demo Js -->
+</body>
+
+</html>
